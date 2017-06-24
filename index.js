@@ -6,7 +6,13 @@ const os = require('os'),
 // gets all network interfaces that have been assigned network addresses
 let networkInterfaces = os.networkInterfaces();
 // gets the external IPv4 address
-let addresses = networkInterfaces.en1.filter(address => address.family === 'IPv4' && !address.internal);
+let addresses = networkInterfaces.en1
+  .filter(address => address.family === 'IPv4' && !address.internal)
+  .map(address => address.address);
+
+// in case you want to use this in another js file
+module.exports = addresses;
+
 // print the address to the console
 let chalkMethod;
 if (process.argv[2]) {
@@ -16,7 +22,7 @@ if (process.argv[2]) {
 }
 try {
   addresses.forEach(address => {
-    console.log(chalkMethod(`\n${address.address}\n`));
+    console.log(chalkMethod(`\n${address}\n`));
   });
   process.exit(0);
 } catch (err) {
