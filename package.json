@@ -1,0 +1,24 @@
+{
+  "name": "print-ip",
+  "version": "0.0.1",
+  "description": "Command-line tool for getting your IP on the LAN",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "bin": {
+    "ip": "./index.js",
+    "print-ip": "./index.js"
+  },
+  "keywords": [
+    "cli",
+    "ip",
+    "address",
+    "ip address"
+  ],
+  "author": "Ben Zarras",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
+}
