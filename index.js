@@ -6,9 +6,16 @@ const os = require('os'),
 // gets all network interfaces that have been assigned network addresses
 let networkInterfaces = os.networkInterfaces();
 // gets the external IPv4 address
-let addresses = networkInterfaces.en1
-  .filter(address => address.family === 'IPv4' && !address.internal)
-  .map(address => address.address);
+let addresses = [];
+Object.keys(networkInterfaces).forEach(interfaceName => {
+  let networkInterfaceAddresses = networkInterfaces[interfaceName];
+  networkInterfaceAddresses
+    .filter(address => address.family === 'IPv4' && !address.internal)
+    .map(address => address.address)
+    .forEach(address => {
+      addresses.push(address);
+    });
+});
 
 // in case you want to use this in another js file
 module.exports = addresses;
