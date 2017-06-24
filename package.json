@@ -1,6 +1,6 @@
 {
   "name": "print-ip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command-line tool for getting your IP on the LAN",
   "main": "index.js",
   "scripts": {
