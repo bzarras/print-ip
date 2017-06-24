@@ -16,6 +16,10 @@
     "address",
     "ip address"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bzarras/print-ip"
+  },
   "author": "Ben Zarras",
   "license": "MIT",
   "dependencies": {
